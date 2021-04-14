@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Quill from 'quill'
 
 function App() {
+  var quill = new Quill(document.querySelector('#root'), {
+    modules: {
+      // cursors: true,
+      toolbar: [
+        [{ header: [1, 2, false]}],
+        ['bold', 'italic', 'underline'],
+        ['image', 'code-block']
+      ],
+      history: {
+        // Local undo shouldn't undo changes
+        // from remote users
+        userOnly: true
+      }
+    },
+    placeholder: 'Start collaborating...',
+    theme: 'snow' 
+  })
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
