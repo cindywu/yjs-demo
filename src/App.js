@@ -38,7 +38,7 @@ function App() {
 
     // Create an editor-binding which
     // "binds" the quill editor to a Y.Text type.
-    const binding = new QuillBinding(ytext, editor, provider.awareness)
+    new QuillBinding(ytext, editor, provider.awareness)
 
   }, [])
 
